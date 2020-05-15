@@ -3,7 +3,7 @@ Quest 1.
 1. 문서의 title을 '학번_이름' 으로 변경합니다.
 */
 // Answer 1.
-
+document.title = '21961086_이유정';
 
 
 /*
@@ -21,6 +21,13 @@ Quest 2.
 ----------
 */
 // Answer 2.
+function getSize(){
+    
+}
+getSize();
+
+var winSize = getSize();
+console.log(winSize);
 
 
 
@@ -29,15 +36,16 @@ Quest 3.
 1. id 가 'title' 인 요소에 'Hello World' 문자열이 포함되도록 작성합니다.
 */
 // Answer 3.
-
-
+var titleId = document.getElementById('title');
+titleId.innerText = 'Hello World';
 
 /*
 Quest 4.
 1. class 가 'title' 인 요소들에 '안녕하세요.' 문자열이 포함되도록 작성합니다.
 */
 // Answer 4.
-
+var titleClass = document.getElementsByClassName('title');
+titleClass.innerText = '안녕하세요.';
 
 
 /*
@@ -51,6 +59,12 @@ row class의 개수는 __개 입니다.
 ----------
 */
 // Answer 5.
+function getRowCount(){
+    var row = document.getElementsByClassName('row');
+    return row.length;
+}
+var rowCount = getRowCount();
+console.log(`row class의 개수는 ${rowCount}개 입니다.`);
 
 
 
@@ -62,6 +76,16 @@ Quest 6.
 */
 // Answer 6.
 
+var count = 1;
+var timer = setInterval(function(){
+    console.log('hello',count);
+    if(count == 10){
+        clearInterval(timer);
+    }
+    count++;
+}, 1000); // 1초마다 코드 실행.
+
+
 
 
 /*
@@ -70,6 +94,8 @@ Quest 7.
 2. 1(순서) 요소의 위치를 x : 400px, y : 0px 로 좌표이동합니다.
 */
 // Answer 7.
+var scrollId = document.getElementById('scroll');
+scrollId.classList.add('scroll');
 
 
 
@@ -80,6 +106,9 @@ Quest 8.
 3. 1(순서) 요소의 자식 중 세번째 요소(.row)를 삭제합니다.
 */
 // Answer 8.
+var art = document.getElementById('article');
+art.firstElementChild.classList.add('red');
+art.lastElementChild.classList.remove('row');
 
 
 
@@ -102,5 +131,20 @@ Quest 9.
 7. enterName 함수를 호출합니다.
 */
 // Answer 9.
+function enterName(){
+    var isName = prompt('이름을 입력해주세요.');
+    
+    if(isName === null){ // 취소인 경우 false
+        console.log('입력이 취소되었습니다.');
+    }
+    else if(isName === ""){
+        alert('이름을 정확히 입력해주세요.');
+        enterName();
+    }
+    else{
+        document.body.append(isName);
+    }
+}
+enterName();
 
 
