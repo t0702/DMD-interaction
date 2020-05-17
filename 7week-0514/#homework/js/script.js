@@ -21,13 +21,13 @@ Quest 2.
 ----------
 */
 // Answer 2.
-function getSize(){
-    
-}
-getSize();
 
+function getSize() {
+    winWidth = window.innerWidth;
+    winHeight = window.innerHeight;
+}
 var winSize = getSize();
-console.log(winSize);
+console.log("윈도우 콘텐츠의 영역 width : " + winWidth + " px, height : " + winHeight + " px 입니다.");
 
 
 
@@ -45,7 +45,12 @@ Quest 4.
 */
 // Answer 4.
 var titleClass = document.getElementsByClassName('title');
-titleClass.innerText = '안녕하세요.';
+titleClass.innerText = '안녕하세요.'; // 적용되지 않음
+//titleClass[0].innerText = '안녕하세요.';  // 배열로 각각 적용하면 가능.
+for(var i = 0; i < titleClass.length; i++){ // titleClass의 길이만큼 반복.
+    titleClass[i].innerText = '안녕하세요.'; // 각 titleClass에 문자열 '안녕하세요.'추가
+}
+
 
 
 /*
@@ -96,7 +101,7 @@ Quest 7.
 // Answer 7.
 var scrollId = document.getElementById('scroll');
 scrollId.classList.add('scroll');
-
+scrollId.scrollTo(400, 0);
 
 
 /*
