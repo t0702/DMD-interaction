@@ -218,8 +218,6 @@ function OnOdd(e){
 btnOdd.addEventListener('click', OnOdd);
 
 
-
-
 /*
 Quest 8.
 1. button#btn-add-city 요소에 클릭 이벤트를 추가하고 이벤트 핸들러를 할당합니다.
