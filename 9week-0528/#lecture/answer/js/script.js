@@ -36,7 +36,6 @@ function OnStuName(e){
 btnStuName.addEventListener('click', OnStuName);
 
 
-
 /*
 Quest 2.
 1. button#btn-window-size 요소에 클릭 이벤트를 추가하고 이벤트 핸들러를 할당합니다.
@@ -56,7 +55,6 @@ function OnSize(e){
     console.log(result);
 }
 btnWinSize.addEventListener('click', OnSize );
-
 
 
 /*
