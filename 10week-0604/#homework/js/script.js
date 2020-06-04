@@ -7,3 +7,68 @@ Quest.
 */
 // Answer.
 
+var plus = document.getElementById('btn-plus');
+var minus = document.getElementById('btn-minus');
+var multiple = document.getElementById('btn-multiple');
+var divide = document.getElementById('btn-divide');
+var percent = document.getElementById('btn-percent');
+var reset = document.getElementById('btn-reset');
+var radio = document.querySelectorAll('input[name="select_number"]');
+var resultDiv = document.getElementById('result');
+var result = 0;
+
+plus.addEventListener('click', onPlus);
+function onPlus(e){
+    for(var i = 0; i < radio.length; i++){
+        if(radio[i].checked){
+            result += parseInt(radio[i].value);
+        }
+    }
+    resultDiv.innerText = result;
+}
+
+minus.addEventListener('click', onMinus);
+function onMinus(e){
+    for(var i = 0; i < radio.length; i++){
+        if(radio[i].checked){
+            result -= parseInt(radio[i].value);
+        }
+    }
+    resultDiv.innerText = result;
+}
+
+multiple.addEventListener('click', onMultiple);
+function onMultiple(e){
+    for(var i = 0; i < radio.length; i++){
+        if(radio[i].checked){
+            result *= parseInt(radio[i].value);
+        }
+    }
+    resultDiv.innerText = result;
+}
+
+divide.addEventListener('click', onDivide);
+function onDivide(e){
+    for(var i = 0; i < radio.length; i++){
+        if(radio[i].checked){
+            result /= parseInt(radio[i].value);
+        }
+    }
+    resultDiv.innerText = result;
+}
+
+percent.addEventListener('click', onDivide);
+function onDivide(e){
+    for(var i = 0; i < radio.length; i++){
+        if(radio[i].checked){
+            result %= parseInt(radio[i].value);
+        }
+    }
+    resultDiv.innerText = result;
+}
+
+reset.addEventListener('click', onReset);
+function onReset(e){
+    result = 0;
+    resultDiv.innerText = result;
+}
