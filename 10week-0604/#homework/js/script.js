@@ -7,68 +7,135 @@ Quest.
 */
 // Answer.
 
-var plus = document.getElementById('btn-plus');
-var minus = document.getElementById('btn-minus');
-var multiple = document.getElementById('btn-multiple');
-var divide = document.getElementById('btn-divide');
-var percent = document.getElementById('btn-percent');
-var reset = document.getElementById('btn-reset');
-var radio = document.querySelectorAll('input[name="select_number"]');
-var resultDiv = document.getElementById('result');
+// var plus = document.getElementById('btn-plus');
+// var minus = document.getElementById('btn-minus');
+// var multiple = document.getElementById('btn-multiple');
+// var divide = document.getElementById('btn-divide');
+// var percent = document.getElementById('btn-percent');
+// var reset = document.getElementById('btn-reset');
+// var radio = document.querySelectorAll('input[name="select_number"]');
+// var resultDiv = document.getElementById('result');
+// var result = 0;
+
+// plus.addEventListener('click', onPlus);
+// function onPlus(e){
+//     for(var i = 0; i < radio.length; i++){
+//         if(radio[i].checked){
+//             result += parseInt(radio[i].value);
+//         }
+//     }
+//     resultDiv.innerText = result;
+// }
+
+// minus.addEventListener('click', onMinus);
+// function onMinus(e){
+//     for(var i = 0; i < radio.length; i++){
+//         if(radio[i].checked){
+//             result -= parseInt(radio[i].value);
+//         }
+//     }
+//     resultDiv.innerText = result;
+// }
+
+// multiple.addEventListener('click', onMultiple);
+// function onMultiple(e){
+//     for(var i = 0; i < radio.length; i++){
+//         if(radio[i].checked){
+//             result *= parseInt(radio[i].value);
+//         }
+//     }
+//     resultDiv.innerText = result;
+// }
+
+// divide.addEventListener('click', onDivide);
+// function onDivide(e){
+//     for(var i = 0; i < radio.length; i++){
+//         if(radio[i].checked){
+//             result /= parseInt(radio[i].value);
+//         }
+//     }
+//     resultDiv.innerText = result;
+// }
+
+// percent.addEventListener('click', onPercent);
+// function onPercent(e){
+//     for(var i = 0; i < radio.length; i++){
+//         if(radio[i].checked){
+//             result %= parseInt(radio[i].value);
+//         }
+//     }
+//     resultDiv.innerText = result;
+// }
+
+// reset.addEventListener('click', onReset);
+// function onReset(e){
+//     result = 0;
+//     resultDiv.innerText = result;
+// }
+
 var result = 0;
+var resultEl = document.querySelector('#result');
+var utilEl = document.querySelector('#util');
+var btnEls = utilEl.querySelectorAll('button');
+var selectNumbersEl = document.querySelector('#select-numbers');
+var radioEls = selectNumbersEl.querySelectorAll('[name=select_number]');
+var value = null;
 
-plus.addEventListener('click', onPlus);
-function onPlus(e){
-    for(var i = 0; i < radio.length; i++){
-        if(radio[i].checked){
-            result += parseInt(radio[i].value);
-        }
+for(var i = 0; i < radioEls.length; i++){
+    if(radioEls[i].check){
+        value = parseInt(radioEls[i].value, 10);
     }
-    resultDiv.innerText = result;
+    // console.log(i, radioEls[i].checked);
 }
 
-minus.addEventListener('click', onMinus);
-function onMinus(e){
-    for(var i = 0; i < radio.length; i++){
-        if(radio[i].checked){
-            result -= parseInt(radio[i].value);
-        }
+function onClickBtn(e){
+    e.preventDefault();
+    // 클릭된 버튼들을 구분
+    // 1. id 에 따라서 구분
+    var el = e.currentTarget, id = el.id, type= id.replace('btn-', '');
+    // String.replace('','');
+    // 문자열의 치환.
+    // console.log('abcdef'.replace('abc','___'));
+    // console.log('abcdef'.replace('abc',''));
+    // console.log(type); // 공통된 문자열을 삭제. btn-plus -> plus
+
+    if(type === 'plus'){
+        result = result + value;
+    }else if(type === 'minus'){
+        result = result - value;
+    }else if(type === 'multiple'){
+        result = result * value;
+    }else if(type === 'divide'){
+        result = result / value;
+    }else if(type === 'percent'){
+        result = result % value;
+    }else if(type === 'reset'){
+            result = 0;
     }
-    resultDiv.innerText = result;
+/*
+    // 2. innterText 의 값으루구분
+    type = el.innterText;
+    if(type === '+'){
+    }else if(type === '-'){
+    }else if(type === '*'){
+    }else if(type === '/'){
+    }else if(type === '%'){
+    }else{
+    }
+    */
+    resultEl.innerText = result;
+}
+for(var i = 0; i < btnEls.length; i++){
+    btnEls[i].addEventListener('click', onClickBtn);
 }
 
-multiple.addEventListener('click', onMultiple);
-function onMultiple(e){
-    for(var i = 0; i < radio.length; i++){
-        if(radio[i].checked){
-            result *= parseInt(radio[i].value);
-        }
-    }
-    resultDiv.innerText = result;
+function onChangeRadio(){
+    // console.log('change');
+    var el = e.currentTarget;
+    value = parseInt(el.value, 10);
+    // console.log(el.value);
 }
 
-divide.addEventListener('click', onDivide);
-function onDivide(e){
-    for(var i = 0; i < radio.length; i++){
-        if(radio[i].checked){
-            result /= parseInt(radio[i].value);
-        }
-    }
-    resultDiv.innerText = result;
-}
-
-percent.addEventListener('click', onPercent);
-function onPercent(e){
-    for(var i = 0; i < radio.length; i++){
-        if(radio[i].checked){
-            result %= parseInt(radio[i].value);
-        }
-    }
-    resultDiv.innerText = result;
-}
-
-reset.addEventListener('click', onReset);
-function onReset(e){
-    result = 0;
-    resultDiv.innerText = result;
+for(var i = 0; i <radioEls.length; i++){
+    radioEls[i]. addEventListener('change', onChangeRadio);
 }

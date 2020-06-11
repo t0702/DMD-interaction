@@ -223,6 +223,23 @@ Quest 8.
 3. 사용자가 도시명을 입력할 경우, ul#city-list 자식인 li 요소에 도시명 문자열이 추가되도록 작성합니다.
 */
 // Answer 8.
+var btnAddCityEl = document.getElementById('btn-add-city');
+btnAddCityEl = document.querySelector('button#btn-add-city');
+
+function onClickAddCity(e){
+    e.preventDefault();
+    var city = prompt('도시명을 입력하세요.');
+    if(city !== null && city !== ''){
+        var cityListEl = document.querySelector('ul#city-list');
+        var cityItemEl = document.createElement('li'); // <li></li>
+        cityItemEl.innerText = city; // <li>도시명</li>
+        cityItemEl.style.backgroundColor = "#000";
+        cityItemEl.style.color = "#fff";
+        cityListEl.appendChild(cityItemEl);
+    }
+}
+
+btnAddCityEl.addEventListener('click', onClickAddCity);
 
 
 
