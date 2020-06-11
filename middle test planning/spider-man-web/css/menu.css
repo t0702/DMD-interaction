@@ -1,0 +1,55 @@
+body {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+header nav {
+    width: 100vw;
+    position: absolute;
+    padding: 20px 40px;
+    z-index: 9999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header nav span{
+    color: #fff;
+    letter-spacing: 1em;
+    font-size: 12px;
+    font-style: italic;
+}
+.hamburger div{
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin: 7px 0;
+}
+.menu-page {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-color: #161616;
+}
+.menu-page .textarea{
+    color: #fff;
+    font-size: 50px;
+    font-weight: bold;
+    text-decoration-line: underline;
+    padding: 100px 100px 0;
+}
+.horizon-scroll {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: scroll;
+}
+
+.horizon-scroll::-webkit-scrollbar { display: none; }
+.horizon-scroll section{
+    width: 500px;
+    height: 500px;
+    min-width: 500px;
+    height: 500px;
+    background-color: #fff;
+
+}
