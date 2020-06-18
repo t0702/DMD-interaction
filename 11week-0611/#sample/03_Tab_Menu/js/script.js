@@ -10,6 +10,7 @@ function onClickTabMenu(e) {
     e.preventDefault();
     var el = e.currentTarget, index = btnTabMenuEl.indexOf(el);
     if(!el.classList.contains('selected')) {
+        
         cuId = index;
         btnTabMenuEl[exId].classList.remove('selected');
         tabContentEl[exId].classList.remove('selected');

@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
+/* font-family: 'Kanit', sans-serif; */
+/* font-family: 'Noto Sans KR', sans-serif; */
+:root{ --kanit: 'Kanit', sans-serif;}
+
 /* Reset */
 html,body,div,span,applet,object,iframe,
 h1,h2,h3,h4,h5,h6,p,blockquote,pre,
@@ -45,4 +51,15 @@ table{
 }
 
 /* common css */
-* {box-sizing: border-box;}
+* {box-sizing: border-box; font-family: 'Noto Sans KR', sans-serif;}
+body {background-color: #000; position: relative;}
+header {padding: 20px 40px; position: fixed; top:0; right:0; left:0; z-index: 99;}
+header nav {display: flex; justify-content: space-between; align-items: center;}
+header nav div.hamburger div {width: 30px; height: 3px; background-color: #fff; margin-bottom: 7px;}
+header span {color: #fff; font-size: 12px; letter-spacing: 1em;}
+
+section {display: none;}
+section.active{display: block; top: 0; left: 0; width: 100vw; height: 100vh;}
+
+
+
