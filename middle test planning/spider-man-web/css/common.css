@@ -58,8 +58,8 @@ header nav {display: flex; justify-content: space-between; align-items: center;}
 header nav div.hamburger div {width: 30px; height: 3px; background-color: #fff; margin-bottom: 7px;}
 header span {color: #fff; font-size: 12px; letter-spacing: 1em;}
 
-section {display: none;}
-section.active{display: block; top: 0; left: 0; width: 100vw; height: 100vh;}
+/* section {display: none;} */
+/* section.active{display: block; top: 0; left: 0; width: 100vw; height: 100vh;} */
 
 
 

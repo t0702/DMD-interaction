@@ -36,8 +36,9 @@ function onLoadImage(e){
     console.log(el);
     console.log(el.naturalWidth, el.naturalHeight);
     console.log(image.naturalWidth, image.naturalHeight);
-    image.style.width = el.naturalWidth + "px";
-    image.style.height = el.naturalHeight + "px";
+    // image.style.width = el.naturalWidth + "px";
+    // image.style.height = el.naturalHeight + "px";
+    
     // 1차 함수를 이용해서 사이즈를 같은 비율로 줄임
     // x : y = a : b
     // 지정하고자 하는 width 값 : 구하고자 하는 height = 원본 이미지의 width : 원본 이미지의 height
@@ -50,6 +51,9 @@ function onLoadImage(e){
     image.style.width = width + 'px';
     image.style.height = height + 'px';
     document.body.appendChild(image);
+}
+function onErrorImage(e){
+    console.log(e);
 }
 // 이미지를 로드하는 이벤트. video, pdf파일 등도 사용 가능.
 image.src = imgPath;
